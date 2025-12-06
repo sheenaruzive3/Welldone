@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--HEAD-->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png"
+        href="https://github.com/sheenaruzive3/Jane-Rivulet-Academy-Website/blob/main/android-chrome-512x512(1).png?raw=true">
+     
+    <!--Title-->
+     <title>Jane Rivulet Academy</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+    <!--CSS-->
+  <style>
+/* RESET */
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            color: #093058;
+        }
+  
+body {
+    background: #f3f7fa;
+}
+
+html {
+            scroll-behavior: smooth;
+            
+        }
+
+/* HEADER */
+        header {
+            width: 100%;
+            padding:  15px 40px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+             }
+        
+        .logo {
+            width: 150px;
+            border-radius: 30%;
+            box-shadow: 0 2px 8px rgba(110, 109, 109, 0.02);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 80px;
+            align-items: center;
+                    }
+
+         nav a {
+            text-decoration: none;
+            font-size: 1.1rem;
+            color: #0056b3;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #061524;
+            background-color: rgb(210, 217, 238);
+        }
+
+/*Drop down*/
+
+.dropdown {
+            position: relative;
+        }
+
+.dropdown-menu {
+            position: absolute;
+            top: 25px;
+            left: 0;
+            background: white;
+            min-width: 180px;
+            border-radius: 10px;
+            padding: 10px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+            display: none;
+            flex-direction: column;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: flex;
+        }
+
+        .dropdown-menu a {
+            padding: 10px 18px;
+            color: #0056b3;
+        }
+
+        .dropdown-menu a:hover {
+            background: #e8f0fe;
+            border-left: 4px solid #0056b3;
+        }
+
+ /* HAMBURGER */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: #093058;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        /* ANIMATION */
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        /*Mobile Nav-Link*/
+        @media (max-width: 768px) {
+            nav ul {
+                position: absolute;
+                top: 80px;
+                right: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px 0;
+                gap: 20px;
+                align-items: center;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transform: translateY(-200%);
+                pointer-events: none;
+                opacity: 0;
+                transition: 0.3s ease;
+            }
+
+            nav ul.active {
+                transform: translateY(0);
+                pointer-events: auto;
+                opacity: 1;
+            }
+
+            .dropdown:hover .dropdown-menu {
+                display: none;
+            }
+
+            .dropdown-menu {
+                position: relative;
+                top: 0;
+                width: 100%;
+                box-shadow: none;
+                background: #f7faff;
+                display: none;
+            }
+
+            .dropdown.open .dropdown-menu {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+  </style>
+</head>
+
+<body>
+    <!--Header-->
+    <header>
+        <a href="index.html">
+            <img class="logo" src="https://github.com/sheenaruzive3/Jane-Rivulet-Academy-Website/blob/main/524459393_24384236734505006_8221463529767492508_n.jpg?raw=true">
+        </a>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                
+                <!--About Us drop down-->
+                <li class="dropdown">
+                    <a href="About-Us.html" target="_blank">About Us ▾</a>    
+                    <div class="dropdown-menu">
+                        
+                        <a href="#Who we are">Who We Are</a>
+                        <a href="#Our Philosophy">Our Philosophy</a>
+                        <a href="#Our Mission">Our Mision</a>
+                        <a href="#Our Values">Our Values</a>
+                        
+                    </div>
+                </li>
+
+
+                <!--Curriculumn drop Down-->
+                <li class="dropdown">
+                    <a href="Curriculumn.html" target="_blank">Curriculumn ▾</a>
+                    <div class="dropdown-menu">
+                            <a href="#ECD">ECD</a>
+                            <a href="#Grades 1-7">Grades 1-7</a>
+                            <a href="#Extra Curriculumn Activities">Extra Curriculumn Activities</a>  
+                            <a href="#Fees">Fees</a>
+      
+                    </div>
+                </li>
+
+                <li><a href="Contact-Us.html" target="_blank">Contact Us</a></li>
+            </ul>
+
+         <!--Hamburger-->
+               <div class="hamburger">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                </div>
+        </nav> 
+    </header>
+
+    <!--MAIN CONTENT-->
+    <main></main>
+    
+    <!--FOOTER-->
+    <footer></footer>
+
+    <!--JavaScript-->
+    <script>
+
+/* SLIDESHOW */
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 5000);
+
+       /* MOBILE MENU LOGIC */
+const hamburger = document.querySelector(".hamburger"); // Changed to class selector
+const navMenu = document.querySelector("#nav-menu");    // This is fine as is
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+});
+
+/* MOBILE DROPDOWNS */
+
+
+dropdowns.forEach(drop => {
+    drop.addEventListener("click", (e) => {
+        // Only on mobile
+        if (window.innerWidth <= 768) {
+            // Prevent closing when clicking dropdown links
+            if (e.target.tagName === 'A' && !e.target.getAttribute('href').startsWith('#')) {
+                return; // Allow links to external pages to work
+            }
+            
+            // Toggle dropdown on mobile
+            drop.classList.toggle("open");
+            e.stopPropagation(); // Prevent event bubbling
+        }
+    });
+});
+
+/* MOBILE DROPDOWNS */
+        const dropdowns = document.querySelectorAll(".dropdown");
+
+        dropdowns.forEach(drop => {
+            drop.addEventListener("click", () => {
+                if (window.innerWidth <= 768) {
+                    drop.classList.toggle("open");
+                }
+            });
+        });
+
+// Close dropdowns when clicking outside on mobile
+document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+        if (!e.target.closest('.dropdown')) {
+            dropdowns.forEach(drop => {
+                drop.classList.remove('open');
+            });
+        }
+    }
+});
+
+    </script>
+</body>
+
+</html>
